@@ -5,7 +5,7 @@ if (isset($_POST['submit'])){
 
     require_once 'db.inc.php';
     
-
+    // Kollar om det finns ett användarnamn som matchar i databasen.
     function checkUsername($connection, $name){
         $sql = "SELECT * from users WHERE usersUserName = ?;";
         
@@ -29,11 +29,13 @@ if (isset($_POST['submit'])){
 
         mysqli_stmt_close($stmt);
     }
+
+    // Jämför om lösenordet stämmer överens med lösenordet i databasen och loggar in användaren om det är rätt lösenord. 
     function loginUser($connection, $name, $pas){
         $userExists = checkUsername($connection, $name);
         
         if ($userExists === false){
-           
+           header("location: loginpage.php?error");
         }
         $passwordHash = $userExists["usersPassword"];
         if($pas === $passwordHash){
@@ -42,7 +44,7 @@ if (isset($_POST['submit'])){
             header ("location: index.php");
         }
         else{
-            header ("location: loginpage.php");
+            header ("location: loginpage.php?error");
            
         }
     }   

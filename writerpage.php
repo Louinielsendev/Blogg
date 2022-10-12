@@ -9,8 +9,10 @@
     }
 ?>
 
-<form action="" method="post">
-    <input type="text">
+<form action="writer.inc.php" method="POST">
+    <input type="text" name="rubrik" placeholder="Rubrik">
+    <textarea name="content" id="textarea" cols="30" rows="10"></textarea>
+    <button type="submit" name="submit">Publicera</button>
 </form>
 
     
