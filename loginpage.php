@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['id'])){
+if (isset($_SESSION['ID'])){
     header("Location: index.php");
 }
 include_once 'loginheader.php'
@@ -21,7 +21,7 @@ include_once 'loginheader.php'
     </form>
     <?php
     if (isset($_GET["error"])){
-        echo "<p> Fel Användarnamn eller lösenord!";
+        echo "<p>Fel Användarnamn eller lösenord!<p>";
     }
     ?>
 </body>
