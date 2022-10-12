@@ -17,7 +17,7 @@ include_once 'loginheader.php'
     <form action="login.inc.php" method='POST'>
         <input type="text" name='usrname' placeholder='Användarnamn'>
         <input type="password" name='pwd' placeholder = 'Lösenord'>
-        <input type='submit' name='submit'>
+        <button type='submit' name='submit'>Logga in</button>
     </form>
 </body>
 </html>
