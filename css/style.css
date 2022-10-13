@@ -1,9 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Silkscreen', cursive;
+    
 }
+
 
 header {
     height: 70px;
-    background-color: red;
+    background-color: rgb(40, 80, 104);
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding: 0 10vw 0 10vw;
+}
+header a {
+    line-height: 1.7em;
+    margin:auto 0 auto 0;
+    color: white;
+}
+
+nav {
+    margin:auto 0 auto 0;
+}
+
+nav a {
+    margin-left: 20px;
+    font-size: 1.1em;
+}
+
+#wrapper {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+   
+}
+
+.blogPost{
+    padding: 50px;
+    border: solid;
+    margin-top: 20px;
+}
+
+.blogPost h2 {
+    font-size: 2.5em;
+}
+
+.date{
+    margin-bottom: 30px;
+}
+
+.blogPost p {
+    
+    font-size: 1.2em;
+}
+
+.blogPost h3 {
+    margin-top: 40px;
+    font-size: 1.7em;
+}
+
+#fullBlogPost {
+
+}
+
+#fullBlogPost img {
+    height: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }

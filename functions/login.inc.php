@@ -37,11 +37,11 @@ if (isset($_POST['submit'])){
         if ($userExists === false){
            header("location: loginpage.php?error");
         }
-        $passwordHash = $userExists["usersPassword"];
-        if($pas === $passwordHash){
+        $databasePassword = $userExists["usersPassword"];
+        if($pas === $databasePassword){
             session_start();
             $_SESSION["ID"] = $userExists["usersID"];
-            header ("location: index.php");
+            header ("location: ../index.php");
         }
         else{
             header ("location: loginpage.php?error");
