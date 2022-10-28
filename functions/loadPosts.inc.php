@@ -1,5 +1,6 @@
 <?php
 require_once 'db.inc.php';
+// Hämtar blogginlägg från data basen genon en sql-querry och publicerar dem på index-sidan.
 function getBlogPosts($connection){
     $sql = "SELECT postId, content, authorId, title, uploadDate, users.Fullname  FROM blogposts JOIN users ON blogposts.authorId = users.usersId ORDER BY uploadDate DESC;";
     $result = mysqli_query($connection, $sql);

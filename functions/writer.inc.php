@@ -7,8 +7,18 @@ if (isset($_POST['submit'])){
     $content=nl2br($content);
     // Sparar blogginlägg i databasen
     function createPost($connection, $title, $content){
+
+        if (empty($title)){
+            header ("location: ../writerpage.php?titleError");
+            exit();
+        }
+
+        if (empty($content)){
+            header ("location: ../writerpage.php?contentError");
+            exit();
+        }
         
-        $sql = "INSERT INTO blogPosts (authorId, title, uploadDate, content) VALUES (?, ?, ?, ?);";
+        $sql = "INSERT INTO blogposts (authorId, title, uploadDate, content) VALUES (?, ?, ?, ?);";
         $stmt = mysqli_stmt_init($connection);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
             

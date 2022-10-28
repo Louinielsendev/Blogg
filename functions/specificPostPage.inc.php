@@ -1,6 +1,6 @@
 <?php
 require_once 'functions/db.inc.php';
-
+// Hämtar ett specifikt blogginlägg genom blogginläggets id
 function getFullPost($connection, $post){
     $sql = "SELECT postId, content, authorId, title, uploadDate, users.Fullname  FROM blogposts JOIN users ON blogposts.authorId = users.usersId WHERE postId= ".$post.";";
 $result = mysqli_query($connection, $sql);

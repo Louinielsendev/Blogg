@@ -12,7 +12,7 @@ if (isset($_POST['submit'])){
         $stmt = mysqli_stmt_init($connection);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
             
-            header("location: index.php");
+            header("location: ../loginpage.php");
             exit();
         }
         mysqli_stmt_bind_param($stmt, "s", $name);
@@ -35,7 +35,7 @@ if (isset($_POST['submit'])){
         $userExists = checkUsername($connection, $name);
         
         if ($userExists === false){
-           header("location: loginpage.php?error");
+           header("location: ../loginpage.php?error");
         }
         $databasePassword = $userExists["usersPassword"];
         if($pas === $databasePassword){
@@ -44,7 +44,7 @@ if (isset($_POST['submit'])){
             header ("location: ../index.php");
         }
         else{
-            header ("location: loginpage.php?error");
+            header ("location: ../loginpage.php?error");
            
         }
     }   
